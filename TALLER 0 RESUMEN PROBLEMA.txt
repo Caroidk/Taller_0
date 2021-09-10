@@ -1,0 +1,66 @@
+Cine:
+3 salas de cine (enumeradas del 1 al 3)
+Máximo 2 funciones por sala, una en la mañana (M) y una en la tarde (T)
+Cada sala tiene filas de la A-J:
+i) A-D = 20 asientos
+ii) E-J = 30 asientos
+
+- Columnas del 1-5 y 26-30 (filas A-D) no tiene asientos.
+
+ARCHIVOS:
+- "clientes.txt":
+  Contiene datos de todos los clientes registrados en el sistema. 
+  campo 1: nombres
+  campo 2: apellidos
+  campo 3: STRING con el RUT
+  campo 4: contraseña
+  campo 5: saldo
+
+- "status.txt":
+  Contiene el estado de pase de movilidad de cada cliente.
+  campo 1: STRING con el RUT
+  campo 2: habilitado o no habilitado
+
+- "peliculas.txt":
+  Contiene toda la información de las peliculas.
+  campo 1: nombre de la pelicula
+  campo 2: estreno o liberada
+  campo 3: recaudación de película hasta el momento
+  campo 4: cantidad de funciones
+
+TARIFAS Y DESCUENTOS:
+  Valor entrada estreno: 5.500
+  Valor entrada liberada: 4.000
+  Cliente cuenta con pase de movilidas = dcto del 15% por el total de la compra
+
+REQUERIMIENTOS FUNCIONALES:
+- Lectura de archivos se hace al iniciar el programa
+- Iniciar sesión: se debe ingresar el RUT (11.111.1111-1, 11111111-1 y 111111111 son válidos) y contraseña, si no tiene contraseña crear una.
+- Menú cliente: <Comprar entrada:
+                    + Ingresar nombre de película.
+                    + Se despliegan los horarios disponibles y sus respectivas salas.
+                    + Selecciona la función.
+                    + Se despliegan los asientos ocupados y los libres de la sala.
+                    + Ingresar n° de entradas a comprar
+                    + Seleccionar 1 asiento desocupado por cada entrada a comprar que cumpla con distaciamiento social (1 asiento)
+                    + Calcular total de compra y mostrarlo por pantalla
+                    + Preguntar si está seguro de realizar la compra
+                    + Verificar si tiene saldo suficiente; si no hay saldo suficiente, deberá aparecer un mensaje informando saldo insuficiente y se le da la opción de recargar saldo.>
+                <Información usuario:
+                    + Se despliega información del cliente: RUT, nombre, apellido, saldo y entradas compradas (nombre película, horarios y asientos).>
+                <Devolución entrada:
+                    + Se despliegan todas las entradas del usuario con su respectiva información.
+                    + Se pide el nombre de la película (cliente va a realizar la compra de un solo horario para la misma peícula)
+                    + Ingresar cantidad de entradas a reembolsar
+                    + Ingresar los asientos
+                    + Se devuelve solo el 80% del valor cancelado por cada entrada
+                <Cartelera:
+                    + Se despliegan todas las películas en cartelera con su respectivo horario
+- Menú ADMIN: Al iniciar sistema, si se ingresa ADMIN en rut y contraseña, se ingresará al menú de administrador en el cual se ofrece las sgtes opciones:
+                <Taquilla:
+                    + Monto recaudado total, monto recaudado a lo largo del día y el monto recaudado por horario (mañana y tarde) de cada película.>
+                <Información cliente:
+                    + Se despliega información de cliente ingresando RUT
+                    + Se obtiene nombre, apellido, saldo y entradas compradas a lo largo del día (nombre película, horario y asiento/s)
+- Cierre sistema: Se debe mostrar opción para cerrar sistema, al momento de cerrar se debe sobreescribir los archivos con las modificaciones que se realizaron.
+
